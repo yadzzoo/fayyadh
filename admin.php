@@ -45,7 +45,7 @@ if (isset($_GET['fotoid'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <style>
-     h1 {
+      h1 {
       font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -60,32 +60,32 @@ if (isset($_GET['fotoid'])) {
 
 <main class="flex-shrink-0">
   <div class="container">
-    <h1 class="mt-2 text-center" style="color: rgb(25, 135, 84)">Selamat Datang <?= $_SESSION['namalengkap'] ?> </h1>
+    <h1 class="mt-2 text-center" style="color: rgb(25, 135, 84);">Selamat Datang <?= $_SESSION['namalengkap'] ?> </h1>
 
-    <div class="row">
+    <div class="row justify-content-center">
       <?php
       $sql = mysqli_query($conn, "select * from foto,user where foto.userid=user.userid");
       while ($data = mysqli_fetch_array($sql)) {
       ?>
-        <div class="col-sm-3 my-1">
-          <div class="card">
-            <div class="card-header ">
-              <h2 class="text-center"><?= $data['judulfoto'] ?></h2>
+        <div class="col-sm-3 my-1 ">
+          <div class="card ">
+            <div class="card-header bg-success">
+              <h2 class="text-center" style="color: rgb(214, 248, 231);"><?= $data['judulfoto'] ?></h2>
             </div>
             <div class="card-body">
-              <img src="gambar/<?= $data['lokasifile'] ?>" alt="foto" width="150px">
+              <img src="photo_storage/<?= $data['lokasifile'] ?>" alt="foto" width="150px">
               <hr>
               <i><?= $data['deskripsifoto'] ?></i>
               <h5>Di upload oleh "<?= $data['namalengkap'] ?>"</h5>
             </div>
-            <div class="card-footer">
+            <div class="card-footer text-center bg-success">
               <?php
               $fotoid = $data['fotoid'];
               $sql2 = mysqli_query($conn, "select * from likefoto where fotoid='$fotoid'");
               $sql3 = mysqli_query($conn, "select * from komentarfoto where fotoid='$fotoid'");
               ?>
-              <a href="admin.php?fotoid=<?= $data['fotoid'] ?>"><button type="button" class="btn btn-outline-success">like (<?= mysqli_num_rows($sql2) ?>)</button></a>
-              <a href="komentar.php?fotoid=<?= $data['fotoid'] ?>"><button type="button" class="btn btn-outline-dark">Komentar (<?= mysqli_num_rows($sql3) ?>)</button></a>
+              <a href="admin.php?fotoid=<?= $data['fotoid'] ?>"><button type="button" class="btn btn-outline-light">like (<?= mysqli_num_rows($sql2) ?>)</button></a>
+              <a href="komentar.php?fotoid=<?= $data['fotoid'] ?>"><button type="button" class="btn btn-outline-warning">Komentar (<?= mysqli_num_rows($sql3) ?>)</button></a>
             </div>
           </div>
         </div>
