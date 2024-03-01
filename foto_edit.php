@@ -24,7 +24,7 @@ if (isset($_POST['update'])) {
     } else {
       if ($ukuran < 1044070) {
         $xx = $rand . '_' . $filename;
-        move_uploaded_file($_FILES['lokasifile']['tmp_name'], 'gambar/' . $rand . '_' . $filename);
+        move_uploaded_file($_FILES['lokasifile']['tmp_name'], 'photo_storage/' . $rand . '_' . $filename);
         mysqli_query($conn, "UPDATE foto set judulfoto='$judulfoto',deskripsifoto='$deskripsifoto',lokasifile='$xx',albumid='$albumid' WHERE fotoid='$fotoid'");
         echo "<script>
             alert('update foto berhasil');
@@ -153,7 +153,7 @@ if (isset($_GET['fotoid'])) {
                 <td><?= $data['judulfoto'] ?></td>
                 <td><?= $data['deskripsifoto'] ?></td>
                 <td><?= $data['tanggalunggah'] ?></td>
-                <td><img src="gambar/<?= $data['lokasifile'] ?>" width="100px"></td>
+                <td><img src="photo_storage/<?= $data['lokasifile'] ?>" width="100px"></td>
                 <td><?= $data['namaalbum'] ?></td>
                 <td>
                   <a href="foto.php?fotoid=<?= $data['fotoid'] ?>" onclick="return confirm('Yakin menghapus data?')"><button type="button" class="btn btn-outline-danger">Delete</button></a>

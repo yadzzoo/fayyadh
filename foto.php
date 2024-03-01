@@ -10,7 +10,7 @@ if (isset($_POST['tambah'])) {
   $userid = $_SESSION['userid'];
 
   $rand = rand();
-  $ekstensi =  array('png', 'jpg', 'jpeg', 'gif', 'webp');
+  $ekstensi =  array('png', 'jpg', 'jpeg', 'gif', 'webp', 'jfif');
   $filename = $_FILES['lokasifile']['name'];
   $ukuran = $_FILES['lokasifile']['size'];
   $ext = pathinfo($filename, PATHINFO_EXTENSION);

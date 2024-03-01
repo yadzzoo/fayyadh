@@ -70,12 +70,12 @@ if (isset($_GET['fotoid'])) {
       $sql = mysqli_query($conn, "select * from foto,user where foto.userid=user.userid");
       while ($data = mysqli_fetch_array($sql)) {
       ?>
-        <div class="col-sm-4 my-1 ">
+        <div class="col-sm-4 mb-5 mt-2">
           <div class="card ">
             <div class="card-header bg-success">
               <h2 class="text-center" style="color: rgb(214, 248, 231);"><?= $data['judulfoto'] ?></h2>
             </div>
-            <div class="card-body">
+            <div class="card-body text-center">
               <img src="photo_storage/<?= $data['lokasifile'] ?>" alt="foto" width="150px">
               <hr>
               <i><?= $data['deskripsifoto'] ?></i>
