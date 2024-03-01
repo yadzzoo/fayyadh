@@ -44,6 +44,9 @@ if (isset($_POST['login'])) {
     <title> PICTKLISE </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
     <style>
       h1 {
       font-family: "Poppins", sans-serif;
@@ -58,7 +61,7 @@ if (isset($_POST['login'])) {
     ?>
 
     <main class= "container mt-sm-5">
-    <h1 class= "text-center mb-3" style="color: rgb(25, 135, 84)">LOGIN</h1> <br> <br>
+    <h1 class= "text-center mb-3" style="color: rgb(25, 135, 84)" id="font">LOGIN</h1> <br> <br>
         <div class="container row justify-content-center">
           <div class="col-7 ">
           <form class="row g-3" action="login.php" method="POST">

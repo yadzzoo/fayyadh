@@ -44,6 +44,9 @@ if (isset($_GET['fotoid'])) {
     <title> PICTKLISE </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
     <style>
       h1 {
       font-family: "Poppins", sans-serif;
@@ -60,14 +63,14 @@ if (isset($_GET['fotoid'])) {
 
 <main class="flex-shrink-0">
   <div class="container">
-    <h1 class="mt-2 text-center" style="color: rgb(25, 135, 84);">Selamat Datang <?= $_SESSION['namalengkap'] ?> </h1>
+    <h1 class="mt-2 text-center" style="color: rgb(25, 135, 84);" id="font">Selamat Datang <?= $_SESSION['namalengkap'] ?> </h1>
 
     <div class="row justify-content-center">
       <?php
       $sql = mysqli_query($conn, "select * from foto,user where foto.userid=user.userid");
       while ($data = mysqli_fetch_array($sql)) {
       ?>
-        <div class="col-sm-3 my-1 ">
+        <div class="col-sm-4 my-1 ">
           <div class="card ">
             <div class="card-header bg-success">
               <h2 class="text-center" style="color: rgb(214, 248, 231);"><?= $data['judulfoto'] ?></h2>
